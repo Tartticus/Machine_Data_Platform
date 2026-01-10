@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-consumer
+  namespace: machine-platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db-consumer
+  template:
+    metadata:
+      labels:
+        app: db-consumer
+    spec:
+      containers:
+        - name: db-consumer
+          image: db-consumer:local       
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: "host.docker.internal:9092"
+            - name: KAFKA_TOPIC
+              value: "machine_events"
+            - name: KAFKA_GROUP_ID
+              value: "machine-db-upload"
+            - name: POSTGRES_HOST
+              value: "host.docker.internal"
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_DB
+              value: "machines"
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"

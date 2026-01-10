@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: machines
+    database: machines
+    schema: public
+    tables:
+      - name: bronze_machine_events
+        description: "Raw machine telemetry ingested from Kafka"
+        loaded_at_field: ts
+        freshness:
+          warn_after: {count: 10, period: minute}
+          error_after: {count: 30, period: minute}

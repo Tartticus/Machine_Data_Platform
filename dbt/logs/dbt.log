@@ -1,0 +1,663 @@
+[0m15:11:35.031374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAD0469400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EACE079A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAD0EFF110>]}
+
+
+============================== 15:11:35.034286 | a5d91f59-4536-4ff2-ad36-af8516c1a5c8 ==============================
+[0m15:11:35.034286 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:11:35.034788 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\matth\\.dbt', 'invocation_command': 'dbt debug --profile machine_dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\matth\\Projects\\K8_God\\machine-data-platform\\dbt\\logs'}
+[0m15:11:35.046497 [info ] [MainThread]: dbt version: 1.11.2
+[0m15:11:35.046822 [info ] [MainThread]: python version: 3.13.5
+[0m15:11:35.047038 [info ] [MainThread]: python path: C:\Users\matth\miniconda3\python.exe
+[0m15:11:35.047219 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m15:11:35.080684 [info ] [MainThread]: Using profiles dir at C:\Users\matth\.dbt
+[0m15:11:35.081181 [info ] [MainThread]: Using profiles.yml file at C:\Users\matth\.dbt\profiles.yml
+[0m15:11:35.081636 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\dbt_project.yml
+[0m15:11:35.083150 [info ] [MainThread]: adapter type: postgres
+[0m15:11:35.083396 [info ] [MainThread]: adapter version: 1.10.0
+[0m15:11:35.142899 [info ] [MainThread]: Configuration:
+[0m15:11:35.143492 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:11:35.143805 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:11:35.144018 [info ] [MainThread]: Required dependencies:
+[0m15:11:35.144223 [debug] [MainThread]: Executing "git --help"
+[0m15:11:35.165516 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:11:35.165866 [debug] [MainThread]: STDERR: "b''"
+[0m15:11:35.166107 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:11:35.166402 [info ] [MainThread]: Connection:
+[0m15:11:35.166633 [info ] [MainThread]:   host: localhost
+[0m15:11:35.166819 [info ] [MainThread]:   port: 5432
+[0m15:11:35.166991 [info ] [MainThread]:   user: postgres
+[0m15:11:35.167151 [info ] [MainThread]:   database: machines
+[0m15:11:35.167310 [info ] [MainThread]:   schema: analytics
+[0m15:11:35.167469 [info ] [MainThread]:   connect_timeout: 10
+[0m15:11:35.167627 [info ] [MainThread]:   role: None
+[0m15:11:35.167783 [info ] [MainThread]:   search_path: None
+[0m15:11:35.167942 [info ] [MainThread]:   keepalives_idle: 0
+[0m15:11:35.168096 [info ] [MainThread]:   sslmode: None
+[0m15:11:35.168245 [info ] [MainThread]:   sslcert: None
+[0m15:11:35.168393 [info ] [MainThread]:   sslkey: None
+[0m15:11:35.168537 [info ] [MainThread]:   sslrootcert: None
+[0m15:11:35.168696 [info ] [MainThread]:   application_name: dbt
+[0m15:11:35.168838 [info ] [MainThread]:   retries: 1
+[0m15:11:35.169143 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:11:35.300090 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m15:11:35.408709 [debug] [MainThread]: Using postgres connection "debug"
+[0m15:11:35.408962 [debug] [MainThread]: On debug: select 1 as id
+[0m15:11:35.409119 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:11:35.420957 [debug] [MainThread]: SQL status: SELECT 1 in 0.012 seconds
+[0m15:11:35.421590 [debug] [MainThread]: On debug: Close
+[0m15:11:35.421802 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:11:35.422057 [info ] [MainThread]: [32mAll checks passed![0m
+[0m15:11:35.422811 [debug] [MainThread]: Command `dbt debug` succeeded at 15:11:35.422732 after 0.49 seconds
+[0m15:11:35.423024 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:11:35.423210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAD27E7100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAD28F1130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EAD2623240>]}
+[0m15:11:35.423427 [debug] [MainThread]: Flushing usage events
+[0m15:11:36.277389 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:11:45.966681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793CBF9400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793A7F9A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793D68F110>]}
+
+
+============================== 15:11:45.969636 | ed8d2314-7f9d-4956-a6da-d5bee5d5ae99 ==============================
+[0m15:11:45.969636 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:11:45.970069 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\matth\\.dbt', 'invocation_command': 'dbt run --profile machine_dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\matth\\Projects\\K8_God\\machine-data-platform\\dbt\\logs'}
+[0m15:11:46.123560 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ed8d2314-7f9d-4956-a6da-d5bee5d5ae99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793D076780>]}
+[0m15:11:46.159606 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ed8d2314-7f9d-4956-a6da-d5bee5d5ae99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793DBBFCE0>]}
+[0m15:11:46.160735 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:11:46.288673 [debug] [MainThread]: checksum: d05c02b2b8bfc7324d95547fcb284837b7a47f1eb7dd719f23b503806206026e, vars: {}, profile: machine_dbt, target: , version: 1.11.2
+[0m15:11:46.289561 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:11:46.289952 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'ed8d2314-7f9d-4956-a6da-d5bee5d5ae99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793EDD4F50>]}
+[0m15:11:46.701207 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.machine_dbt.gold
+- models.machine_dbt
+- models.machine_dbt.silver
+[0m15:11:46.704282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ed8d2314-7f9d-4956-a6da-d5bee5d5ae99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793CC066C0>]}
+[0m15:11:46.724556 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\manifest.json
+[0m15:11:46.726685 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\semantic_manifest.json
+[0m15:11:46.742305 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ed8d2314-7f9d-4956-a6da-d5bee5d5ae99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793F2A9A90>]}
+[0m15:11:46.742616 [info ] [MainThread]: Found 464 macros
+[0m15:11:46.742914 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ed8d2314-7f9d-4956-a6da-d5bee5d5ae99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793F2002C0>]}
+[0m15:11:46.743748 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m15:11:46.744106 [debug] [MainThread]: Command end result
+[0m15:11:46.754401 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\manifest.json
+[0m15:11:46.756118 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\semantic_manifest.json
+[0m15:11:46.758161 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\run_results.json
+[0m15:11:46.758678 [debug] [MainThread]: Command `dbt run` succeeded at 15:11:46.758606 after 0.87 seconds
+[0m15:11:46.758896 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793D9DFE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793F22DDE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001793F22DFF0>]}
+[0m15:11:46.759117 [debug] [MainThread]: Flushing usage events
+[0m15:11:48.882802 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:13:48.942943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA260E9400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA23CF9A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA26B7F110>]}
+
+
+============================== 15:13:48.946199 | 1c09c448-1ceb-4242-815b-fa2103149db4 ==============================
+[0m15:13:48.946199 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:13:48.946621 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\matth\\.dbt', 'invocation_command': 'dbt run --profile machine_dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\matth\\Projects\\K8_God\\machine-data-platform\\dbt\\logs'}
+[0m15:13:49.070355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1c09c448-1ceb-4242-815b-fa2103149db4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA26566780>]}
+[0m15:13:49.109469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1c09c448-1ceb-4242-815b-fa2103149db4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA270AFCE0>]}
+[0m15:13:49.110452 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:13:49.236134 [debug] [MainThread]: checksum: d05c02b2b8bfc7324d95547fcb284837b7a47f1eb7dd719f23b503806206026e, vars: {}, profile: machine_dbt, target: , version: 1.11.2
+[0m15:13:49.337916 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 5 files added, 0 files changed.
+[0m15:13:49.338272 [debug] [MainThread]: Partial parsing: added file: machine_dbt://models\gold\machine_hourly_stats.yml
+[0m15:13:49.338466 [debug] [MainThread]: Partial parsing: added file: machine_dbt://models\gold\machine_hourly_stats.sql
+[0m15:13:49.338658 [debug] [MainThread]: Partial parsing: added file: machine_dbt://models\sources.yml
+[0m15:13:49.339053 [debug] [MainThread]: Partial parsing: added file: machine_dbt://models\silver\silver_machine_events.yml
+[0m15:13:49.339240 [debug] [MainThread]: Partial parsing: added file: machine_dbt://models\silver\silver_machine_events.sql
+[0m15:13:49.688657 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1c09c448-1ceb-4242-815b-fa2103149db4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA288A5050>]}
+[0m15:13:49.734581 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\manifest.json
+[0m15:13:49.736635 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\semantic_manifest.json
+[0m15:13:49.752068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1c09c448-1ceb-4242-815b-fa2103149db4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA26FFFF20>]}
+[0m15:13:49.752370 [info ] [MainThread]: Found 2 models, 6 data tests, 1 source, 464 macros
+[0m15:13:49.752776 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1c09c448-1ceb-4242-815b-fa2103149db4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA28BE89F0>]}
+[0m15:13:49.753879 [info ] [MainThread]: 
+[0m15:13:49.754130 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:13:49.754391 [info ] [MainThread]: 
+[0m15:13:49.754737 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:13:49.757019 [debug] [ThreadPool]: Acquiring new postgres connection 'list_machines'
+[0m15:13:49.857017 [debug] [ThreadPool]: Using postgres connection "list_machines"
+[0m15:13:49.857277 [debug] [ThreadPool]: On list_machines: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "connection_name": "list_machines"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:13:49.857440 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:13:49.870480 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.013 seconds
+[0m15:13:49.871337 [debug] [ThreadPool]: On list_machines: Close
+[0m15:13:49.871981 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_machines, now create_machines_analytics)
+[0m15:13:49.872274 [debug] [ThreadPool]: Creating schema "database: "machines"
+schema: "analytics"
+"
+[0m15:13:49.875126 [debug] [ThreadPool]: Using postgres connection "create_machines_analytics"
+[0m15:13:49.875329 [debug] [ThreadPool]: On create_machines_analytics: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "connection_name": "create_machines_analytics"} */
+create schema if not exists "analytics"
+[0m15:13:49.875477 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:13:49.897913 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.022 seconds
+[0m15:13:49.898526 [debug] [ThreadPool]: On create_machines_analytics: COMMIT
+[0m15:13:49.898700 [debug] [ThreadPool]: Using postgres connection "create_machines_analytics"
+[0m15:13:49.898846 [debug] [ThreadPool]: On create_machines_analytics: COMMIT
+[0m15:13:49.901973 [debug] [ThreadPool]: SQL status: COMMIT in 0.003 seconds
+[0m15:13:49.902176 [debug] [ThreadPool]: On create_machines_analytics: Close
+[0m15:13:49.903134 [debug] [ThreadPool]: Acquiring new postgres connection 'list_machines_analytics'
+[0m15:13:49.906312 [debug] [ThreadPool]: Using postgres connection "list_machines_analytics"
+[0m15:13:49.906520 [debug] [ThreadPool]: On list_machines_analytics: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "connection_name": "list_machines_analytics"} */
+select
+      'machines' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'machines' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'machines' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m15:13:49.906681 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:13:49.932341 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.026 seconds
+[0m15:13:49.933102 [debug] [ThreadPool]: On list_machines_analytics: ROLLBACK
+[0m15:13:49.933691 [debug] [ThreadPool]: On list_machines_analytics: Close
+[0m15:13:49.938117 [debug] [MainThread]: Using postgres connection "master"
+[0m15:13:49.938359 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:13:49.938588 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:13:49.971346 [debug] [MainThread]: SQL status: SELECT 0 in 0.033 seconds
+[0m15:13:49.972105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1c09c448-1ceb-4242-815b-fa2103149db4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA28D7FEE0>]}
+[0m15:13:49.972369 [debug] [MainThread]: On master: ROLLBACK
+[0m15:13:49.972879 [debug] [MainThread]: On master: COMMIT
+[0m15:13:49.973188 [debug] [MainThread]: Using postgres connection "master"
+[0m15:13:49.973421 [debug] [MainThread]: On master: COMMIT
+[0m15:13:49.974037 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:13:49.974256 [debug] [MainThread]: On master: Close
+[0m15:13:49.978217 [debug] [Thread-1 (]: Began running node model.machine_dbt.silver_machine_events
+[0m15:13:49.978585 [info ] [Thread-1 (]: 1 of 2 START sql incremental model analytics.silver_machine_events ............. [RUN]
+[0m15:13:49.979026 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.machine_dbt.silver_machine_events'
+[0m15:13:49.979328 [debug] [Thread-1 (]: Began compiling node model.machine_dbt.silver_machine_events
+[0m15:13:49.983801 [debug] [Thread-1 (]: Writing injected SQL for node "model.machine_dbt.silver_machine_events"
+[0m15:13:49.984874 [debug] [Thread-1 (]: Began executing node model.machine_dbt.silver_machine_events
+[0m15:13:50.014538 [debug] [Thread-1 (]: Writing runtime sql for node "model.machine_dbt.silver_machine_events"
+[0m15:13:50.015726 [debug] [Thread-1 (]: Using postgres connection "model.machine_dbt.silver_machine_events"
+[0m15:13:50.015975 [debug] [Thread-1 (]: On model.machine_dbt.silver_machine_events: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "node_id": "model.machine_dbt.silver_machine_events"} */
+
+      
+  
+    
+
+  create  table "machines"."analytics"."silver_machine_events"
+  
+  
+    as
+  
+  (
+    
+
+with raw as (
+    select
+        id,
+        ts,
+        machine_id,
+        temperature::int    as temperature,
+        pressure::int       as pressure,
+        rpm::int            as rpm,
+        fault_code::int     as fault_code
+    from "machines"."public"."bronze_machine_events"
+),
+
+
+enriched as (
+    select
+        md5(id::text) as event_natural_key,
+        ts,
+        machine_id,
+        temperature,
+        pressure,
+        rpm,
+        fault_code
+    from raw
+)
+
+select *
+from enriched
+
+
+  );
+  
+  
+[0m15:13:50.016196 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:13:50.049331 [debug] [Thread-1 (]: SQL status: SELECT 1211 in 0.033 seconds
+[0m15:13:50.058994 [debug] [Thread-1 (]: On model.machine_dbt.silver_machine_events: COMMIT
+[0m15:13:50.059225 [debug] [Thread-1 (]: Using postgres connection "model.machine_dbt.silver_machine_events"
+[0m15:13:50.059397 [debug] [Thread-1 (]: On model.machine_dbt.silver_machine_events: COMMIT
+[0m15:13:50.063088 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m15:13:50.064189 [debug] [Thread-1 (]: On model.machine_dbt.silver_machine_events: Close
+[0m15:13:50.065636 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1c09c448-1ceb-4242-815b-fa2103149db4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA28ED4890>]}
+[0m15:13:50.066024 [info ] [Thread-1 (]: 1 of 2 OK created sql incremental model analytics.silver_machine_events ........ [[32mSELECT 1211[0m in 0.09s]
+[0m15:13:50.066559 [debug] [Thread-1 (]: Finished running node model.machine_dbt.silver_machine_events
+[0m15:13:50.067037 [debug] [Thread-2 (]: Began running node model.machine_dbt.machine_hourly_stats
+[0m15:13:50.067339 [info ] [Thread-2 (]: 2 of 2 START sql table model analytics.machine_hourly_stats .................... [RUN]
+[0m15:13:50.067752 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.machine_dbt.machine_hourly_stats'
+[0m15:13:50.067965 [debug] [Thread-2 (]: Began compiling node model.machine_dbt.machine_hourly_stats
+[0m15:13:50.069497 [debug] [Thread-2 (]: Writing injected SQL for node "model.machine_dbt.machine_hourly_stats"
+[0m15:13:50.070218 [debug] [Thread-2 (]: Began executing node model.machine_dbt.machine_hourly_stats
+[0m15:13:50.076576 [debug] [Thread-2 (]: Writing runtime sql for node "model.machine_dbt.machine_hourly_stats"
+[0m15:13:50.077285 [debug] [Thread-2 (]: Using postgres connection "model.machine_dbt.machine_hourly_stats"
+[0m15:13:50.077505 [debug] [Thread-2 (]: On model.machine_dbt.machine_hourly_stats: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "node_id": "model.machine_dbt.machine_hourly_stats"} */
+
+  
+    
+
+  create  table "machines"."analytics"."machine_hourly_stats__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+    machine_id,
+    date_trunc('hour', ts) as hour,
+    avg(temperature) as avg_temperature,
+    avg(pressure)    as avg_pressure,
+    avg(rpm)         as avg_rpm,
+    sum(case when fault_code != 0 then 1 else 0 end) as fault_count
+from "machines"."analytics"."silver_machine_events"
+group by 1, 2
+  );
+  
+[0m15:13:50.077700 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:13:50.096526 [debug] [Thread-2 (]: SQL status: SELECT 2 in 0.019 seconds
+[0m15:13:50.100093 [debug] [Thread-2 (]: Using postgres connection "model.machine_dbt.machine_hourly_stats"
+[0m15:13:50.100407 [debug] [Thread-2 (]: On model.machine_dbt.machine_hourly_stats: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "node_id": "model.machine_dbt.machine_hourly_stats"} */
+alter table "machines"."analytics"."machine_hourly_stats__dbt_tmp" rename to "machine_hourly_stats"
+[0m15:13:50.101181 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:13:50.101926 [debug] [Thread-2 (]: On model.machine_dbt.machine_hourly_stats: COMMIT
+[0m15:13:50.102118 [debug] [Thread-2 (]: Using postgres connection "model.machine_dbt.machine_hourly_stats"
+[0m15:13:50.102281 [debug] [Thread-2 (]: On model.machine_dbt.machine_hourly_stats: COMMIT
+[0m15:13:50.106193 [debug] [Thread-2 (]: SQL status: COMMIT in 0.004 seconds
+[0m15:13:50.110103 [debug] [Thread-2 (]: Applying DROP to: "machines"."analytics"."machine_hourly_stats__dbt_backup"
+[0m15:13:50.112671 [debug] [Thread-2 (]: Using postgres connection "model.machine_dbt.machine_hourly_stats"
+[0m15:13:50.112880 [debug] [Thread-2 (]: On model.machine_dbt.machine_hourly_stats: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "node_id": "model.machine_dbt.machine_hourly_stats"} */
+drop table if exists "machines"."analytics"."machine_hourly_stats__dbt_backup" cascade
+[0m15:13:50.113579 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m15:13:50.114364 [debug] [Thread-2 (]: On model.machine_dbt.machine_hourly_stats: Close
+[0m15:13:50.114715 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1c09c448-1ceb-4242-815b-fa2103149db4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA28B66F10>]}
+[0m15:13:50.115049 [info ] [Thread-2 (]: 2 of 2 OK created sql table model analytics.machine_hourly_stats ............... [[32mSELECT 2[0m in 0.05s]
+[0m15:13:50.115489 [debug] [Thread-2 (]: Finished running node model.machine_dbt.machine_hourly_stats
+[0m15:13:50.116420 [debug] [MainThread]: On master: COMMIT
+[0m15:13:50.116611 [debug] [MainThread]: Using postgres connection "master"
+[0m15:13:50.116752 [debug] [MainThread]: On master: COMMIT
+[0m15:13:50.116989 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:13:50.138751 [debug] [MainThread]: SQL status: COMMIT in 0.022 seconds
+[0m15:13:50.139062 [debug] [MainThread]: On master: Close
+[0m15:13:50.139343 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:13:50.139489 [debug] [MainThread]: Connection 'create_machines_analytics' was properly closed.
+[0m15:13:50.139616 [debug] [MainThread]: Connection 'list_machines_analytics' was properly closed.
+[0m15:13:50.139740 [debug] [MainThread]: Connection 'model.machine_dbt.silver_machine_events' was properly closed.
+[0m15:13:50.139860 [debug] [MainThread]: Connection 'model.machine_dbt.machine_hourly_stats' was properly closed.
+[0m15:13:50.140026 [info ] [MainThread]: 
+[0m15:13:50.140441 [info ] [MainThread]: Finished running 1 incremental model, 1 table model in 0 hours 0 minutes and 0.39 seconds (0.39s).
+[0m15:13:50.141163 [debug] [MainThread]: Command end result
+[0m15:13:50.152716 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\manifest.json
+[0m15:13:50.154680 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\semantic_manifest.json
+[0m15:13:50.158647 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\run_results.json
+[0m15:13:50.158834 [info ] [MainThread]: 
+[0m15:13:50.159164 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:13:50.159424 [info ] [MainThread]: 
+[0m15:13:50.159642 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m15:13:50.160241 [debug] [MainThread]: Command `dbt run` succeeded at 15:13:50.160167 after 1.29 seconds
+[0m15:13:50.160448 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA28BE45F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA28DF2C30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA28AE6650>]}
+[0m15:13:50.160641 [debug] [MainThread]: Flushing usage events
+[0m15:13:52.274814 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:33:29.811317 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE803DF4D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FEFE27DBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE8276B9D0>]}
+
+
+============================== 15:33:29.814497 | 44808ea1-bdbc-4cdc-84e0-a48dd0da1a42 ==============================
+[0m15:33:29.814497 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:33:29.814910 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\matth\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt compile --profile machine_dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\matth\\Projects\\K8_God\\machine-data-platform\\dbt\\logs'}
+[0m15:33:29.978486 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '44808ea1-bdbc-4cdc-84e0-a48dd0da1a42', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE80AFE9E0>]}
+[0m15:33:30.030026 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '44808ea1-bdbc-4cdc-84e0-a48dd0da1a42', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FEFE8D1E10>]}
+[0m15:33:30.031150 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:33:30.165322 [debug] [MainThread]: checksum: d05c02b2b8bfc7324d95547fcb284837b7a47f1eb7dd719f23b503806206026e, vars: {}, profile: machine_dbt, target: , version: 1.11.2
+[0m15:33:30.276106 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:33:30.276407 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m15:33:30.276568 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:33:30.302446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '44808ea1-bdbc-4cdc-84e0-a48dd0da1a42', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE82835750>]}
+[0m15:33:30.349091 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\manifest.json
+[0m15:33:30.351146 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\semantic_manifest.json
+[0m15:33:30.369979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '44808ea1-bdbc-4cdc-84e0-a48dd0da1a42', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE82CB23F0>]}
+[0m15:33:30.370309 [info ] [MainThread]: Found 2 models, 6 data tests, 1 source, 464 macros
+[0m15:33:30.370634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '44808ea1-bdbc-4cdc-84e0-a48dd0da1a42', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE82CF26D0>]}
+[0m15:33:30.371944 [info ] [MainThread]: 
+[0m15:33:30.372332 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:33:30.372570 [info ] [MainThread]: 
+[0m15:33:30.373079 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:33:30.376913 [debug] [ThreadPool]: Acquiring new postgres connection 'list_machines_analytics'
+[0m15:33:30.524562 [debug] [ThreadPool]: Using postgres connection "list_machines_analytics"
+[0m15:33:30.524907 [debug] [ThreadPool]: On list_machines_analytics: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "connection_name": "list_machines_analytics"} */
+select
+      'machines' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'machines' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'machines' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m15:33:30.525155 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:33:30.539858 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.015 seconds
+[0m15:33:30.540735 [debug] [ThreadPool]: On list_machines_analytics: ROLLBACK
+[0m15:33:30.541345 [debug] [ThreadPool]: On list_machines_analytics: Close
+[0m15:33:30.544467 [debug] [MainThread]: Using postgres connection "master"
+[0m15:33:30.544699 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:33:30.544879 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:33:30.575595 [debug] [MainThread]: SQL status: SELECT 0 in 0.031 seconds
+[0m15:33:30.576437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '44808ea1-bdbc-4cdc-84e0-a48dd0da1a42', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE830A4D50>]}
+[0m15:33:30.576750 [debug] [MainThread]: On master: ROLLBACK
+[0m15:33:30.577321 [debug] [MainThread]: On master: Close
+[0m15:33:30.580403 [debug] [Thread-1 (]: Began running node model.machine_dbt.silver_machine_events
+[0m15:33:30.580734 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.machine_dbt.silver_machine_events'
+[0m15:33:30.580917 [debug] [Thread-1 (]: Began compiling node model.machine_dbt.silver_machine_events
+[0m15:33:30.588657 [debug] [Thread-1 (]: Writing injected SQL for node "model.machine_dbt.silver_machine_events"
+[0m15:33:30.589359 [debug] [Thread-1 (]: Began executing node model.machine_dbt.silver_machine_events
+[0m15:33:30.589792 [debug] [Thread-1 (]: Finished running node model.machine_dbt.silver_machine_events
+[0m15:33:30.590366 [debug] [Thread-1 (]: Began running node test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9
+[0m15:33:30.590695 [debug] [Thread-4 (]: Began running node test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6
+[0m15:33:30.590992 [debug] [Thread-3 (]: Began running node test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7
+[0m15:33:30.591310 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.machine_dbt.silver_machine_events, now test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9)
+[0m15:33:30.591510 [debug] [Thread-2 (]: Began running node model.machine_dbt.machine_hourly_stats
+[0m15:33:30.591915 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6'
+[0m15:33:30.592274 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7'
+[0m15:33:30.592511 [debug] [Thread-1 (]: Began compiling node test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9
+[0m15:33:30.592868 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.machine_dbt.machine_hourly_stats'
+[0m15:33:30.593093 [debug] [Thread-4 (]: Began compiling node test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6
+[0m15:33:30.593315 [debug] [Thread-3 (]: Began compiling node test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7
+[0m15:33:30.599802 [debug] [Thread-1 (]: Writing injected SQL for node "test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9"
+[0m15:33:30.600064 [debug] [Thread-2 (]: Began compiling node model.machine_dbt.machine_hourly_stats
+[0m15:33:30.602275 [debug] [Thread-4 (]: Writing injected SQL for node "test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6"
+[0m15:33:30.604189 [debug] [Thread-3 (]: Writing injected SQL for node "test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7"
+[0m15:33:30.605716 [debug] [Thread-2 (]: Writing injected SQL for node "model.machine_dbt.machine_hourly_stats"
+[0m15:33:30.606472 [debug] [Thread-2 (]: Began executing node model.machine_dbt.machine_hourly_stats
+[0m15:33:30.606986 [debug] [Thread-2 (]: Finished running node model.machine_dbt.machine_hourly_stats
+[0m15:33:30.607226 [debug] [Thread-2 (]: Began running node test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487
+[0m15:33:30.607524 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.machine_dbt.machine_hourly_stats, now test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487)
+[0m15:33:30.607809 [debug] [Thread-2 (]: Began compiling node test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487
+[0m15:33:30.608149 [debug] [Thread-4 (]: Began executing node test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6
+[0m15:33:30.613268 [debug] [Thread-2 (]: Writing injected SQL for node "test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487"
+[0m15:33:30.613547 [debug] [Thread-3 (]: Began executing node test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7
+[0m15:33:30.613773 [debug] [Thread-1 (]: Began executing node test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9
+[0m15:33:30.614170 [debug] [Thread-4 (]: Finished running node test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6
+[0m15:33:30.614721 [debug] [Thread-3 (]: Finished running node test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7
+[0m15:33:30.615166 [debug] [Thread-1 (]: Finished running node test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9
+[0m15:33:30.615405 [debug] [Thread-4 (]: Began running node test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10
+[0m15:33:30.615711 [debug] [Thread-3 (]: Began running node test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769
+[0m15:33:30.616084 [debug] [Thread-2 (]: Began executing node test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487
+[0m15:33:30.616354 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6, now test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10)
+[0m15:33:30.616614 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7, now test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769)
+[0m15:33:30.617019 [debug] [Thread-2 (]: Finished running node test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487
+[0m15:33:30.617231 [debug] [Thread-4 (]: Began compiling node test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10
+[0m15:33:30.617487 [debug] [Thread-3 (]: Began compiling node test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769
+[0m15:33:30.619706 [debug] [Thread-4 (]: Writing injected SQL for node "test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10"
+[0m15:33:30.654480 [debug] [Thread-3 (]: Writing injected SQL for node "test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769"
+[0m15:33:30.655600 [debug] [Thread-3 (]: Began executing node test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769
+[0m15:33:30.656024 [debug] [Thread-3 (]: Finished running node test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769
+[0m15:33:30.656304 [debug] [Thread-4 (]: Began executing node test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10
+[0m15:33:30.656661 [debug] [Thread-4 (]: Finished running node test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10
+[0m15:33:30.657656 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:33:30.657834 [debug] [MainThread]: Connection 'list_machines_analytics' was properly closed.
+[0m15:33:30.657967 [debug] [MainThread]: Connection 'test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9' was properly closed.
+[0m15:33:30.658110 [debug] [MainThread]: Connection 'test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10' was properly closed.
+[0m15:33:30.658231 [debug] [MainThread]: Connection 'test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769' was properly closed.
+[0m15:33:30.658350 [debug] [MainThread]: Connection 'test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487' was properly closed.
+[0m15:33:30.659065 [debug] [MainThread]: Command end result
+[0m15:33:30.670147 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\manifest.json
+[0m15:33:30.672188 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\semantic_manifest.json
+[0m15:33:30.676030 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\run_results.json
+[0m15:33:30.676582 [debug] [MainThread]: Command `dbt compile` succeeded at 15:33:30.676512 after 0.95 seconds
+[0m15:33:30.676783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE81613A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE82E37800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE82E37A10>]}
+[0m15:33:30.676998 [debug] [MainThread]: Flushing usage events
+[0m15:33:32.804448 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:49:39.688293 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66A14F4D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B667FEDBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66C4DB9D0>]}
+
+
+============================== 15:49:39.691528 | 86e7a933-5ea1-4c3c-a3bc-759cc600d0d6 ==============================
+[0m15:49:39.691528 [info ] [MainThread]: Running with dbt=1.11.2
+[0m15:49:39.692208 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\matth\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt compile --profile machine_dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\matth\\Projects\\K8_God\\machine-data-platform\\dbt\\logs'}
+[0m15:49:39.844214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '86e7a933-5ea1-4c3c-a3bc-759cc600d0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66A86E9E0>]}
+[0m15:49:39.892629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '86e7a933-5ea1-4c3c-a3bc-759cc600d0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B668641E10>]}
+[0m15:49:39.893657 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:49:40.022568 [debug] [MainThread]: checksum: d05c02b2b8bfc7324d95547fcb284837b7a47f1eb7dd719f23b503806206026e, vars: {}, profile: machine_dbt, target: , version: 1.11.2
+[0m15:49:40.124747 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:49:40.125028 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m15:49:40.125192 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:49:40.150904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '86e7a933-5ea1-4c3c-a3bc-759cc600d0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66C5A5750>]}
+[0m15:49:40.196494 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\manifest.json
+[0m15:49:40.198321 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\semantic_manifest.json
+[0m15:49:40.212915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '86e7a933-5ea1-4c3c-a3bc-759cc600d0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66CAA23F0>]}
+[0m15:49:40.213200 [info ] [MainThread]: Found 2 models, 6 data tests, 1 source, 464 macros
+[0m15:49:40.213512 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '86e7a933-5ea1-4c3c-a3bc-759cc600d0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66CAE26D0>]}
+[0m15:49:40.214670 [info ] [MainThread]: 
+[0m15:49:40.214931 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:49:40.215131 [info ] [MainThread]: 
+[0m15:49:40.215447 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:49:40.218365 [debug] [ThreadPool]: Acquiring new postgres connection 'list_machines_analytics'
+[0m15:49:40.319536 [debug] [ThreadPool]: Using postgres connection "list_machines_analytics"
+[0m15:49:40.319801 [debug] [ThreadPool]: On list_machines_analytics: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "connection_name": "list_machines_analytics"} */
+select
+      'machines' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'machines' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'machines' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m15:49:40.319970 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:49:40.356231 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.036 seconds
+[0m15:49:40.357185 [debug] [ThreadPool]: On list_machines_analytics: ROLLBACK
+[0m15:49:40.357697 [debug] [ThreadPool]: On list_machines_analytics: Close
+[0m15:49:40.360522 [debug] [MainThread]: Using postgres connection "master"
+[0m15:49:40.360774 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "machine_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:49:40.360959 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:49:40.384131 [debug] [MainThread]: SQL status: SELECT 0 in 0.023 seconds
+[0m15:49:40.384954 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '86e7a933-5ea1-4c3c-a3bc-759cc600d0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66CE84D50>]}
+[0m15:49:40.385208 [debug] [MainThread]: On master: ROLLBACK
+[0m15:49:40.385937 [debug] [MainThread]: On master: Close
+[0m15:49:40.389201 [debug] [Thread-1 (]: Began running node model.machine_dbt.silver_machine_events
+[0m15:49:40.389542 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.machine_dbt.silver_machine_events'
+[0m15:49:40.389728 [debug] [Thread-1 (]: Began compiling node model.machine_dbt.silver_machine_events
+[0m15:49:40.397477 [debug] [Thread-1 (]: Writing injected SQL for node "model.machine_dbt.silver_machine_events"
+[0m15:49:40.398110 [debug] [Thread-1 (]: Began executing node model.machine_dbt.silver_machine_events
+[0m15:49:40.398489 [debug] [Thread-1 (]: Finished running node model.machine_dbt.silver_machine_events
+[0m15:49:40.399040 [debug] [Thread-1 (]: Began running node test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9
+[0m15:49:40.399371 [debug] [Thread-2 (]: Began running node model.machine_dbt.machine_hourly_stats
+[0m15:49:40.399669 [debug] [Thread-3 (]: Began running node test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7
+[0m15:49:40.400009 [debug] [Thread-4 (]: Began running node test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6
+[0m15:49:40.400335 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.machine_dbt.silver_machine_events, now test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9)
+[0m15:49:40.400696 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.machine_dbt.machine_hourly_stats'
+[0m15:49:40.401009 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7'
+[0m15:49:40.401426 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6'
+[0m15:49:40.401732 [debug] [Thread-1 (]: Began compiling node test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9
+[0m15:49:40.402014 [debug] [Thread-2 (]: Began compiling node model.machine_dbt.machine_hourly_stats
+[0m15:49:40.402253 [debug] [Thread-3 (]: Began compiling node test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7
+[0m15:49:40.402491 [debug] [Thread-4 (]: Began compiling node test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6
+[0m15:49:40.408931 [debug] [Thread-1 (]: Writing injected SQL for node "test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9"
+[0m15:49:40.410686 [debug] [Thread-2 (]: Writing injected SQL for node "model.machine_dbt.machine_hourly_stats"
+[0m15:49:40.412691 [debug] [Thread-3 (]: Writing injected SQL for node "test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7"
+[0m15:49:40.414779 [debug] [Thread-4 (]: Writing injected SQL for node "test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6"
+[0m15:49:40.415533 [debug] [Thread-2 (]: Began executing node model.machine_dbt.machine_hourly_stats
+[0m15:49:40.415947 [debug] [Thread-2 (]: Finished running node model.machine_dbt.machine_hourly_stats
+[0m15:49:40.416142 [debug] [Thread-2 (]: Began running node test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487
+[0m15:49:40.416327 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.machine_dbt.machine_hourly_stats, now test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487)
+[0m15:49:40.416506 [debug] [Thread-2 (]: Began compiling node test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487
+[0m15:49:40.421431 [debug] [Thread-2 (]: Writing injected SQL for node "test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487"
+[0m15:49:40.421911 [debug] [Thread-1 (]: Began executing node test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9
+[0m15:49:40.422202 [debug] [Thread-3 (]: Began executing node test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7
+[0m15:49:40.422614 [debug] [Thread-4 (]: Began executing node test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6
+[0m15:49:40.423029 [debug] [Thread-1 (]: Finished running node test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9
+[0m15:49:40.423419 [debug] [Thread-3 (]: Finished running node test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7
+[0m15:49:40.423834 [debug] [Thread-4 (]: Finished running node test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6
+[0m15:49:40.424069 [debug] [Thread-1 (]: Began running node test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10
+[0m15:49:40.424315 [debug] [Thread-2 (]: Began executing node test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487
+[0m15:49:40.424571 [debug] [Thread-3 (]: Began running node test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769
+[0m15:49:40.424841 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.machine_dbt.not_null_silver_machine_events_ts.44d3bdc3b9, now test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10)
+[0m15:49:40.425212 [debug] [Thread-2 (]: Finished running node test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487
+[0m15:49:40.425441 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.machine_dbt.not_null_silver_machine_events_event_natural_key.bc6da7c0b7, now test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769)
+[0m15:49:40.425680 [debug] [Thread-1 (]: Began compiling node test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10
+[0m15:49:40.426007 [debug] [Thread-3 (]: Began compiling node test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769
+[0m15:49:40.427999 [debug] [Thread-1 (]: Writing injected SQL for node "test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10"
+[0m15:49:40.462724 [debug] [Thread-3 (]: Writing injected SQL for node "test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769"
+[0m15:49:40.464108 [debug] [Thread-1 (]: Began executing node test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10
+[0m15:49:40.464563 [debug] [Thread-1 (]: Finished running node test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10
+[0m15:49:40.464813 [debug] [Thread-3 (]: Began executing node test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769
+[0m15:49:40.465395 [debug] [Thread-3 (]: Finished running node test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769
+[0m15:49:40.467052 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:49:40.467220 [debug] [MainThread]: Connection 'list_machines_analytics' was properly closed.
+[0m15:49:40.467346 [debug] [MainThread]: Connection 'test.machine_dbt.not_null_machine_hourly_stats_hour.37e9a26b10' was properly closed.
+[0m15:49:40.467465 [debug] [MainThread]: Connection 'test.machine_dbt.unique_silver_machine_events_event_natural_key.5d7a803487' was properly closed.
+[0m15:49:40.467589 [debug] [MainThread]: Connection 'test.machine_dbt.not_null_machine_hourly_stats_machine_id.d58363a769' was properly closed.
+[0m15:49:40.467709 [debug] [MainThread]: Connection 'test.machine_dbt.not_null_silver_machine_events_machine_id.e2585bcea6' was properly closed.
+[0m15:49:40.468409 [debug] [MainThread]: Command end result
+[0m15:49:40.479052 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\manifest.json
+[0m15:49:40.481249 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\semantic_manifest.json
+[0m15:49:40.485195 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\matth\Projects\K8_God\machine-data-platform\dbt\target\run_results.json
+[0m15:49:40.485779 [debug] [MainThread]: Command `dbt compile` succeeded at 15:49:40.485701 after 0.89 seconds
+[0m15:49:40.485995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66B383A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66CC33750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B66CC33A10>]}
+[0m15:49:40.486183 [debug] [MainThread]: Flushing usage events
+[0m15:49:41.238738 [debug] [MainThread]: An error was encountered while trying to flush usage events

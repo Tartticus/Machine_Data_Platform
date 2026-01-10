@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: machine_hourly_stats
+    description: "Hourly machine health / performance aggregates"
+    columns:
+      - name: machine_id
+        tests:
+          - not_null
+      - name: hour
+        tests:
+          - not_null

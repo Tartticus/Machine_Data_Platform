@@ -1,0 +1,8 @@
+storage:
+  sqlite:
+    base_dir: .dagster
+
+run_coordinator:
+  default:
+    module: dagster._core.run_coordinator
+    class: DefaultRunCoordinator

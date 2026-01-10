@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-producer
+  namespace: machine-platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-producer
+  template:
+    metadata:
+      labels:
+        app: kafka-producer
+    spec:
+      containers:
+        - name: kafka-producer
+          image: kafka-producer:local     # 👈 your image tag
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MODBUS_HOST
+              value: "modbus-sim"         # Service name from modbus-sim.yaml
+            - name: MODBUS_PORT
+              value: "5020"
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: "host.docker.internal:9092"
+              # ^ for now: talks to Kafka running in docker-compose on your host
+            - name: KAFKA_TOPIC
+              value: "machine_events"

@@ -1,0 +1,16 @@
+version: 2
+#tests
+models:
+  - name: silver_machine_events
+    description: "Cleaned incremental machine telemetry"
+    columns:
+      - name: event_natural_key
+        tests:
+          - not_null
+          - unique
+      - name: ts
+        tests:
+          - not_null
+      - name: machine_id
+        tests:
+          - not_null
